@@ -2,12 +2,25 @@
 <html>
 <head>
   <meta charset="utf-8">
-	<title></title>
+	<title>TO DO</title>
 	<link rel="stylesheet" type="text/css" href="styles/fonts.css">    
-	<link rel="stylesheet" type="text/css" href="styles/gauge.css">    
-	<link rel="stylesheet" type="text/css" href="styles/index.css">    
+	<link rel="stylesheet" type="text/css" href="styles/index.css"> 
+  <link rel="stylesheet" type="text/css" href="body/__day-name/__day-name.css">   
+  <link rel="stylesheet" type="text/css" href="body/conrainer/container.css">   
+  <link rel="stylesheet" type="text/css" href="body/conrainer/gauge/__average/gauge__average.css">   
+  <link rel="stylesheet" type="text/css" href="body/conrainer/gauge/__circle/gauge__cirlce.css">   
+  <link rel="stylesheet" type="text/css" href="body/conrainer/gauge/__cirlce-arc/gauge__cirlce-arc.css">   
+  <link rel="stylesheet" type="text/css" href="body/conrainer/gauge/__cirlce-base/gauge__cirlce-base.css">   
+  <link rel="stylesheet" type="text/css" href="body/conrainer/gauge/__percent/gauge__percent.css">   
+  <link rel="stylesheet" type="text/css" href="body/conrainer/gauge/gauge.css">   
+  <link rel="stylesheet" type="text/css" href="body/conrainer/button/button.css">   
+  <link rel="stylesheet" type="text/css" href="body/conrainer/task-list/task-list.css">   
+  <link rel="stylesheet" type="text/css" href="body/conrainer/task-list/task.css">   
 </head>
 <body>
+
+  <p class="__day-name">Today</p>
+
   <div class="container">
     <div class="gauge">
         <div class="gauge__average">
@@ -18,13 +31,36 @@
               r="53" cx="60" cy="60"
               transform="rotate(-90 60 60)"
               stroke-dashoffset="0"
-              stroke-dasharray="1 329"></circle>
+              stroke-dasharray="1 329">
+            </circle>
           </svg>
           <div class="gauge__percent">40</div>
         </div>
     </div>
-    <div class="button incr">+</div>
-    <div class="button decr">-</div>
+
+    <span class="task-list">
+      <span class="task">
+        task 1
+      </span>
+      <span class="task">
+        task 2
+      </span>
+      <span class="task">
+        task 3
+      </span>
+      <span class="task">
+        task 4
+      </span>
+      <span class="task">
+        task 5
+      </span>
+      <span class="task">
+        task 6
+      </span>
+      
+    </span>
+    <!-- <div class="button incr">+</div> -->
+    <!-- <div class="button decr">-</div> -->
   </div>
   <script type="text/javascript" src="scripts/helpers.js"></script>
   <script type="text/javascript" src="scripts/index.js"></script>

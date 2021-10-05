@@ -1,0 +1,9 @@
+.task-list{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 50px;
+    background-color: greenyellow;
+}

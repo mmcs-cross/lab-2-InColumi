@@ -10,13 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
   setGaugePercent($gauge, state.counter)
   
   $incrButton.addEventListener('click', function() {
-    state.counter = Math.min(state.counter + 10, 100)
+    state.counter = Math.min(state.counter + 1, 100)
     saveState(state)
     setGaugePercent($gauge, state.counter)
   })
 
   $decrButton.addEventListener('click', function() {
-    state.counter = Math.max(state.counter - 10, 0)
+    state.counter = Math.max(state.counter - 1, 0)
     saveState(state)
     setGaugePercent($gauge, state.counter)
   })

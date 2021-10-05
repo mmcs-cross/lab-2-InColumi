@@ -1,0 +1,6 @@
+.gauge__cirlce-arc {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 7;
+    transition: stroke-dasharray 0.5s;
+  }
