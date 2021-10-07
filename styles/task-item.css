@@ -1,0 +1,88 @@
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  width: 95%;
+  height: auto;
+  background: #f1f2f6;
+  border-radius: 8px;
+  margin: 4px 0 4px;
+}
+
+.task-item:hover > .task-item_remove * {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.rectangle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 24px;
+  height: 24px;
+
+  margin: 8px;
+  border-radius: 8px;
+  border: 2px solid #BBC1DA;
+}
+
+.rectangle:hover{
+  cursor: pointer;
+}
+
+.rectangle_checked{
+  width: 60%;
+  height: 50%;
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+
+.rectangle:hover > .rectangle_checked{
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity 0.35s;
+}
+
+
+/* .task-item__checkbox-logo {
+  
+
+  
+
+  background: #ffffff;
+  color: #bbc1da;
+  border-radius: 8px;
+}
+
+.task-item__checkbox-logo:hover {
+  cursor: pointer;
+} */
+
+.task-item__text {
+  font-family: Roboto;
+  font-size: 15px;
+  line-height: 16px;
+
+  margin: 8px 0px 8px 0px;
+  letter-spacing: 0.02em;
+  color: #252526;
+}
+.task-item_check {
+  background-color: red;
+}
+
+.task-item_remove * {
+  height: 12px;
+  width: 12px;
+  margin: 4px;
+  opacity: 0;
+  fill: #a5a5a5;
+  transition: opacity 0.3s;
+}
+
+.task-item_remove:hover > .task-item__icon * {
+  fill: #252526;
+  cursor: pointer;
+  transition: fill 0.35s;
+}
