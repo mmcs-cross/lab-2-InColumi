@@ -1,7 +1,6 @@
 .task-item {
   display: flex;
   align-items: center;
-  justify-items: center;
   width: 95%;
   height: auto;
   background: #f1f2f6;
@@ -35,7 +34,7 @@
   width: 60%;
   height: 50%;
   opacity: 0;
-  transition: opacity 0.35s;
+  transition: opacity 1.5s;
 }
 
 .rectangle:hover > .rectangle_checked{
@@ -44,41 +43,33 @@
   transition: opacity 0.35s;
 }
 
-
-/* .task-item__checkbox-logo {
-  
-
-  
-
-  background: #ffffff;
-  color: #bbc1da;
-  border-radius: 8px;
-}
-
-.task-item__checkbox-logo:hover {
-  cursor: pointer;
-} */
-
 .task-item__text {
+   width: 85%; /*спросить, почему пропадает крестик */
   font-family: Roboto;
   font-size: 15px;
   line-height: 16px;
-
+  /* text-align: justify; */
   margin: 8px 0px 8px 0px;
   letter-spacing: 0.02em;
   color: #252526;
+  
 }
-.task-item_check {
-  background-color: red;
+
+.task-item_remove{
+  height: 12px;
+  width: 12px;
+  margin: 14px 14px 14px;
+  margin-left: auto;
 }
 
 .task-item_remove * {
-  height: 12px;
-  width: 12px;
-  margin: 4px;
   opacity: 0;
   fill: #a5a5a5;
-  transition: opacity 0.3s;
+  transition: opacity 1.5s;
+}
+
+.task-item_remove:hover {
+  cursor: pointer;
 }
 
 .task-item_remove:hover > .task-item__icon * {
