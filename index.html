@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="styles/fonts.css" />
     <link rel="stylesheet" type="text/css" href="styles/index.css" />
     <link rel="stylesheet" type="text/css" href="styles/task-item.css" />
-    <link rel="stylesheet" type="text/css" href="styles/new-day.css" />
+    <link rel="stylesheet" type="text/css" href="styles/new-day_button.css" />
   </head>
   <body>
     <p class="__day-name">Today</p>
@@ -209,12 +209,22 @@
             </svg>
           </div>
         </div>
+
+        <div class="task-list__input">
+          <div class="task-list_rectangle-logo">
+            <svg class="task-list_logo" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C8.55229 0 9 0.447715 9 1V7H15C15.5523 7 16 7.44772 16 8C16 8.55229 15.5523 9 15 9H9V15C9 15.5523 8.55229 16 8 16C7.44772 16 7 15.5523 7 15V9H1C0.447715 9 0 8.55229 0 8C0 7.44772 0.447715 7 1 7H7V1C7 0.447715 7.44772 0 8 0Z" fill="#A5A5A5"/>
+              </svg>
+          </div>
+          <span class="task-list_new-text"> 
+            What's new
+          </span>
+        </div>
       </div>
       <!-- <div class="button incr">+</div> -->
       <!-- <div class="button decr">-</div> -->
     </div>
-    <script type="text/javascript" src="scripts/helpers.js"></script>
-    <script type="text/javascript" src="scripts/index.js"></script>
+   
   </body>
   <footer>
     <div class="new-day_button">
@@ -230,5 +240,7 @@
       </span>
     </div>
   </footer>
+  <script type="text/javascript" src="scripts/helpers.js"></script>
+  <script type="text/javascript" src="scripts/index.js"></script>
   <script src="scripts/task-item.js"></script>
 </html>
