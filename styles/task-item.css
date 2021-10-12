@@ -44,7 +44,7 @@
 }
 
 .task-item__text {
-   width: 85%; /*спросить, почему пропадает крестик */
+  width: 85%; /*спросить, почему пропадает крестик */
   font-family: Roboto;
   font-size: 15px;
   line-height: 16px;
