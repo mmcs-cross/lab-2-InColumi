@@ -37,6 +37,10 @@
   transition: opacity 1.5s;
 }
 
+.rectangle_checked.rectangle_checked_true{
+ background-color: red;
+}
+
 .rectangle:hover > .rectangle_checked{
   opacity: 1;
   cursor: pointer;
@@ -52,7 +56,6 @@
   margin: 8px 0px 8px 0px;
   letter-spacing: 0.02em;
   color: #252526;
-  
 }
 
 .task-item_remove{
@@ -74,6 +77,7 @@
 
 .task-item_remove:hover > .task-item__icon * {
   fill: #252526;
+  
   cursor: pointer;
   transition: fill 0.35s;
 }

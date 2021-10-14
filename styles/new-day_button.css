@@ -18,6 +18,14 @@ footer {
   transition: background 0.2s;
 }
 
+.new-day_button.new-day_button_pressed{
+  background: red;
+}
+
+/* .new-day_button.new-day_button_pressed:hover{
+  background: red;
+} */
+
 .new-day_logo {
   margin: 7px 6px 7px 8px;
 }

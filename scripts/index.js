@@ -9,15 +9,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const $gauge = document.querySelector('.gauge')
   setGaugePercent($gauge, state.counter)
 
-  $incrButton.addEventListener('click', function () {
-    state.counter = Math.min(state.counter + 1, 100)
-    saveState(state)
-    setGaugePercent($gauge, state.counter)
-  })
+  // $incrButton.addEventListener('click', function () {
+  //   state.counter = Math.min(state.counter + 1, 100)
+  //   saveState(state)
+  //   setGaugePercent($gauge, state.counter)
+  // })
 
-  $decrButton.addEventListener('click', function () {
-    state.counter = Math.max(state.counter - 1, 0)
-    saveState(state)
-    setGaugePercent($gauge, state.counter)
-  })
+  // $decrButton.addEventListener('click', function () {
+  //   state.counter = Math.max(state.counter - 1, 0)
+  //   saveState(state)
+  //   setGaugePercent($gauge, state.counter)
+  // })
 })
