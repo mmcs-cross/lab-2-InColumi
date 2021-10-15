@@ -30,6 +30,12 @@
   cursor: pointer;
 }
 
+.rectangle.rectangle_checked_true{
+  background-color: #FFFFFF;
+  fill: #364FFB;
+  opacity: 1;
+}
+
 .rectangle.rectangle_checked_true *{
   background-color: #FFFFFF;
   fill: #364FFB;
