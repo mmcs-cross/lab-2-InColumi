@@ -30,15 +30,17 @@
   cursor: pointer;
 }
 
+.rectangle.rectangle_checked_true *{
+  background-color: #FFFFFF;
+  fill: #364FFB;
+  opacity: 1;
+}
+
 .rectangle_checked{
   width: 60%;
   height: 50%;
   opacity: 0;
   transition: opacity 1.5s;
-}
-
-.rectangle_checked.rectangle_checked_true{
- background-color: red;
 }
 
 .rectangle:hover > .rectangle_checked{
