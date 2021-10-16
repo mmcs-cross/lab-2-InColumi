@@ -6,6 +6,7 @@
   background: #f1f2f6;
   border-radius: 8px;
   margin: 4px 0 4px;
+  display: none;
 }
 
 .task-item.task-item_blue-border {

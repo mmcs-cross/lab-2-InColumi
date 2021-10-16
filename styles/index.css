@@ -139,7 +139,7 @@ body {
   line-height: 16px;
   color: red;
   border: 1px solid #ffffff;
-  overflow:visible ;
+  overflow:hidden ;
   resize: none;
 }
 
