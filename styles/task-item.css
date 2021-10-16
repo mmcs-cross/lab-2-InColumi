@@ -8,7 +8,11 @@
   margin: 4px 0 4px;
 }
 
-.task-item:hover > .task-item_remove * {
+.task-item.task-item_blue-border {
+  border: 3px solid #364FFB;
+}
+
+.task-item:hover > .task-item_remove *{
   opacity: 1;
   transition: opacity 0.3s;
 }
@@ -56,21 +60,32 @@
 }
 
 .task-item__text {
-  width: 85%; /*спросить, почему пропадает крестик */
+   width: 85%; /*спросить, почему пропадает крестик */
   font-family: Roboto;
   font-size: 15px;
   line-height: 16px;
-  /* text-align: justify; */
+  text-align: justify;
   margin: 8px 0px 8px 0px;
   letter-spacing: 0.02em;
   color: #252526;
 }
 
+.task-item__text.task-item_text_line-through {
+text-decoration: line-through;
+color: #A5A5A5;
+}
+
 .task-item_remove{
-  height: 12px;
-  width: 12px;
-  margin: 14px 14px 14px;
-  margin-left: auto;
+  height: 20px;
+  width: 20px;
+  margin: 10px; 
+}
+.task-item_remove.task-item_remove_view_true{
+  opacity: 1;
+}
+
+.task-item__icon {
+  margin: 4px;
 }
 
 .task-item_remove * {
@@ -85,7 +100,6 @@
 
 .task-item_remove:hover > .task-item__icon * {
   fill: #252526;
-  
   cursor: pointer;
   transition: fill 0.35s;
 }

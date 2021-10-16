@@ -103,21 +103,26 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-color: aqua;
+  overflow: auto;
 }
 
 .task-list__input {
+  width: 95%;
   display: flex;
   align-items: center;
 }
 
+.task-list__input:hover *{
+  fill:  #252526;
+  color: #252526;
+}
+
+
+
 .task-list_rectangle-logo {
   width: 20px;
   height: 20px;
-}
-
-.task-list_rectangle-logo:hover > * {
-  fill: red;
+  margin: 10px;
 }
 
 .task-list_logo {
@@ -125,15 +130,21 @@ body {
   align-items: center;
 }
 
-
-
 .task-list_new-text {
+  width: 100%;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
   line-height: 16px;
-  color: #A5A5A5;
+  color: red;
+  border: 1px solid #ffffff;
+  overflow:visible ;
+  resize: none;
+}
+
+.task-list_new-text:focus {
+  outline: 0;
 }
 
 .task-list_border {
