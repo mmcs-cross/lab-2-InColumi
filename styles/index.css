@@ -96,9 +96,11 @@ body {
   top: 0;
 }
 
-.task-list {
+
+
+.task-list__tasks {
   width: 100%;
-  height: 80%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -107,19 +109,18 @@ body {
 }
 
 .task-list__input {
+  margin-top: auto;
   width: 95%;
   display: flex;
   align-items: center;
 }
 
-.task-list__input:hover *{
-  fill:  #252526;
+.task-list__input:hover * {
+  fill: #252526;
   color: #252526;
 }
 
-
-
-.task-list_rectangle-logo {
+.task-list_add-new-task {
   width: 20px;
   height: 20px;
   margin: 10px;
@@ -137,9 +138,9 @@ body {
   font-weight: normal;
   font-size: 15px;
   line-height: 16px;
-  color: red;
+  color: #252526;
   border: 1px solid #ffffff;
-  overflow:hidden ;
+  overflow: hidden;
   resize: none;
 }
 
@@ -166,4 +167,8 @@ body {
 
 .button:hover {
   background-color: #e8e8e8;
+}
+
+.new-task {
+  display: none;
 }
