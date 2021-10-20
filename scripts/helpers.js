@@ -24,7 +24,7 @@ function getStoredStateOrDefault(defaultState) {
 }
 
 function addNewTask(text, $newTaskHTML) {
-  if (text != "What's new ?") {
+  if (text != "") {
 
     let new_task = document.createElement('div')
     new_task.className = "task-item"
@@ -44,6 +44,10 @@ function addNewTask(text, $newTaskHTML) {
       e.currentTarget.classList.toggle('rectangle_checked_true')
       $text.classList.toggle('task-item_text_line-through')
       $item_remove.classList.toggle('task-item_remove_view_true')
+    })
+
+    $item_remove.addEventListener('click', (e)=>{
+      e
     })
 
     let tasks = document.querySelector(".task-list__tasks")

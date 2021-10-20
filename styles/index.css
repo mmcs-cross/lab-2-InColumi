@@ -170,3 +170,15 @@ body {
 .new-task {
   display: none;
 }
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+  width: 4px; /* высота для горизонтального скролла */
+  background-color: #FFFFFF;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: #D8D8D8;
+  border-radius: 1px;
+}
