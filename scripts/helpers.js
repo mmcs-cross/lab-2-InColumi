@@ -23,18 +23,30 @@ function getStoredStateOrDefault(defaultState) {
   }
 }
 
-function addNewTask(text, $newTask) {
-  console.log(text)
+function addNewTask(text, $newTaskHTML) {
   if (text != "What's new ?") {
 
-    let new_div = document.createElement('div')
-    new_div.className = "task-item"
-    new_div.innerHTML = $newTask
+    let new_task = document.createElement('div')
+    new_task.className = "task-item"
+    new_task.innerHTML = $newTaskHTML
 
-    let new_div_text = new_div.querySelector('.task-item__text')
-    new_div_text.textContent = text
+    new_task.querySelector('.task-item__text').textContent = text
+
+    new_task.addEventListener('click', (e)=>{
+      e.target.classList.toggle('task-item_blue-border')
+    })
+
+    const $rectagle = new_task.querySelector(".rectangle")
+    const $text = new_task.querySelector(".task-item__text")
+    const $item_remove = new_task.querySelector(".task-item_remove")
+  
+    $rectagle.addEventListener('click', (e) => {
+      e.currentTarget.classList.toggle('rectangle_checked_true')
+      $text.classList.toggle('task-item_text_line-through')
+      $item_remove.classList.toggle('task-item_remove_view_true')
+    })
 
     let tasks = document.querySelector(".task-list__tasks")
-    tasks.appendChild(new_div)
+    tasks.appendChild(new_task)
   }
 }

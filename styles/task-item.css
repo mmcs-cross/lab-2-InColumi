@@ -80,8 +80,10 @@ color: #A5A5A5;
   width: 20px;
   margin: 10px; 
 }
-.task-item_remove.task-item_remove_view_true{
+
+.task-item_remove.task-item_remove_view_true *{
   opacity: 1;
+
 }
 
 .task-item__icon {
