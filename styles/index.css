@@ -51,7 +51,9 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: chartreuse;
+  align-items: center;
+
+  flex-direction: column;
 }
 
 .gauge {
@@ -94,6 +96,20 @@ body {
   position: absolute;
   right: 0;
   top: 0;
+}
+
+.todo-progress_todo-info{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 16px;
+  
+  letter-spacing: 0.02em;
+  color: #000000;
+
+  margin-bottom: 2%;
+  user-select: none;
 }
 
 .task-list__tasks {
@@ -174,11 +190,11 @@ body {
 /* полоса прокрутки (скроллбар) */
 ::-webkit-scrollbar {
   width: 4px; /* высота для горизонтального скролла */
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 /* ползунок скроллбара */
 ::-webkit-scrollbar-thumb {
-  background-color: #D8D8D8;
-  border-radius: 1px;
+  background-color: #d8d8d8;
+  border-radius: 4px;
 }

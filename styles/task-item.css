@@ -9,15 +9,15 @@
 }
 
 .task-item.task-item_blue-border {
-  border: 3px solid #364FFB;
+  border: 3px solid #364ffb;
 }
 
-.task-item:hover > .task-item_remove *{
+.task-item:hover > .task-item_remove * {
   opacity: 1;
   transition: opacity 0.3s;
 }
 
-.rectangle{
+.rectangle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,40 +27,40 @@
 
   margin: 8px;
   border-radius: 8px;
-  border: 2px solid #BBC1DA;
+  border: 2px solid #bbc1da;
 }
 
-.rectangle:hover{
+.rectangle:hover {
   cursor: pointer;
 }
 
-.rectangle.rectangle_checked_true{
-  background-color: #FFFFFF;
-  fill: #364FFB;
+.rectangle.rectangle_checked_true {
+  background-color: #ffffff;
+  fill: #364ffb;
   opacity: 1;
 }
 
-.rectangle.rectangle_checked_true *{
-  background-color: #FFFFFF;
-  fill: #364FFB;
+.rectangle.rectangle_checked_true * {
+  background-color: #ffffff;
+  fill: #364ffb;
   opacity: 1;
 }
 
-.rectangle_checked{
+.rectangle_checked {
   width: 60%;
   height: 50%;
   opacity: 0;
   transition: opacity 1.5s;
 }
 
-.rectangle:hover > .rectangle_checked{
+.rectangle:hover > .rectangle_checked {
   opacity: 1;
   cursor: pointer;
   transition: opacity 0.35s;
 }
 
 .task-item__text {
-   width: 85%; /*спросить, почему пропадает крестик */
+  width: 90%; /*спросить, почему пропадает крестик */
   font-family: Roboto;
   font-size: 15px;
   line-height: 16px;
@@ -68,22 +68,22 @@
   margin: 8px 0px 8px 0px;
   letter-spacing: 0.02em;
   color: #252526;
+  word-wrap: break-word;
 }
 
 .task-item__text.task-item_text_line-through {
-text-decoration: line-through;
-color: #A5A5A5;
+  text-decoration: line-through;
+  color: #a5a5a5;
 }
 
-.task-item_remove{
+.task-item_remove {
   height: 20px;
   width: 20px;
-  margin: 10px; 
+  margin: 10px 10px 10px auto;
 }
 
-.task-item_remove.task-item_remove_view_true *{
+.task-item_remove.task-item_remove_view_true * {
   opacity: 1;
-
 }
 
 .task-item__icon {
