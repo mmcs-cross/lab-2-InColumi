@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const state = getStoredStateOrDefault({
-    counter: 1
-  })
+  // const state = getStoredStateOrDefault({
+  //   counter: 1
+  // })
 
   const $incrButton = document.querySelector('.incr')
   const $decrButton = document.querySelector('.decr')
 
   const $gauge = document.querySelector('.gauge')
 
-  setGaugePercent($gauge, state.counter)
+  setGaugePercent($gauge, 0)
 
 
   // $incrButton.addEventListener('click', function () {

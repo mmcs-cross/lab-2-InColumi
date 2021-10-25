@@ -1,26 +1,24 @@
 const GAUGE_MAX = 329
+saveCount('countDo', 0)
+saveCount('countDone', 0)
 
-function setGaugePercent($node, percent) {
+function getCount(item, count) {
+  const stateAsStr = localStorage.getItem(item)
+  return (stateAsStr ? JSON.parse(stateAsStr) : 0)
+}
+
+function setGaugePercent($node, val) {
   const $gaugeCircle = $node.querySelector('.gauge__cirlce-arc')
   const $gaugePercent = $node.querySelector('.gauge__percent')
 
-  const value = GAUGE_MAX * (percent / 100)
+  const value = GAUGE_MAX * (val / 100)
 
   $gaugeCircle.setAttribute('stroke-dasharray', `${value} ${GAUGE_MAX}`)
-  $gaugePercent.innerText = 1 + "%"
+  $gaugePercent.innerText = value + "%"
 }
 
-function saveState(state) {
-  localStorage.setItem('todayAppState', JSON.stringify(state))
-}
-
-function getStoredStateOrDefault(defaultState) {
-  const stateAsStr = localStorage.getItem('todayAppState')
-  if (stateAsStr) {
-    return JSON.parse(stateAsStr)
-  } else {
-    return defaultState
-  }
+function saveCount(item, count) {
+  localStorage.setItem(item, JSON.stringify(count))
 }
 
 function addBoardAndCheckEffectOnClick(task) {
@@ -30,6 +28,7 @@ function addBoardAndCheckEffectOnClick(task) {
 
   $rectagle.addEventListener('click', (e) => {
     e.currentTarget.classList.toggle('rectangle_checked_true')
+    saveCount('countDone', getCount('countDone') + 1)
     $text.classList.toggle('task-item_text_line-through')
     $item_remove.classList.toggle('task-item_remove_view_true')
   })
@@ -37,10 +36,14 @@ function addBoardAndCheckEffectOnClick(task) {
 
 function incrTask(items) {
   if (items != null) {
+    countDo = items.length  + 1
+    const $gauge = document.querySelector('.gauge')
+    setGaugePercent($gauge, countDo)
     let count = document.querySelector('.todo-progress_todo-count')
     let text = document.querySelector('.todo-progress_todo-text')
-    text.innerText  = (items.length > 1 ? "tasks to do" : "task to do")
-    count.innerText = items.length + 1
+    text.innerText  = (countDo > 1 ? "tasks to do" : "task to do")
+    count.innerText = countDo
+    saveCount('countDo', countDo)
   }
 }
 
