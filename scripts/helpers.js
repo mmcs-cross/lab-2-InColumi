@@ -37,10 +37,10 @@ function addBoardAndCheckEffectOnClick(task) {
 
 function incrTask(items) {
   if (items != null) {
-    let count = document.querySelector('.todo-progress_todo-count').innerText
-    let text = document.querySelector('.todo-progress_todo-text').innerText
-    text.innerText  = (items.length > 1 ? "tasks to do" : "tasks to do")
-    count.innerText = items.length
+    let count = document.querySelector('.todo-progress_todo-count')
+    let text = document.querySelector('.todo-progress_todo-text')
+    text.innerText  = (items.length > 1 ? "tasks to do" : "task to do")
+    count.innerText = items.length + 1
   }
 }
 
