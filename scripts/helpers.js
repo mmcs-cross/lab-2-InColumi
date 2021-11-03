@@ -1,19 +1,26 @@
-const GAUGE_MAX = 329
+localStorage.clear();
 saveCount('countDo', 0)
 saveCount('countDone', 0)
 
-function getCount(item, count) {
+function getCount(item) {
   const stateAsStr = localStorage.getItem(item)
   return (stateAsStr ? JSON.parse(stateAsStr) : 0)
 }
 
-function setGaugePercent($node, val) {
+function setGaugePercent() {
+  const $node = document.querySelector('.gauge')
+  const $countDo = getCount('countDo')
+  const $countDone = getCount('countDone')
   const $gaugeCircle = $node.querySelector('.gauge__cirlce-arc')
   const $gaugePercent = $node.querySelector('.gauge__percent')
 
-  const value = GAUGE_MAX * (val / 100)
+  let value = 0
+  if ($countDo != 0){
+    value = ($countDone / $countDo) *  100
+    value = Math.trunc(value)
+  }  
 
-  $gaugeCircle.setAttribute('stroke-dasharray', `${value} ${GAUGE_MAX}`)
+  $gaugeCircle.setAttribute('stroke-dasharray', `${$countDone} ${$countDo}`)
   $gaugePercent.innerText = value + "%"
 }
 
@@ -28,25 +35,63 @@ function addBoardAndCheckEffectOnClick(task) {
     const $item_remove = task.querySelector(".task-item_remove")
 
     $rectagle.addEventListener('click', (e) => {
+      if($rectagle.className == 'rectangle rectangle_checked_true'){
+        decrTask('countDone', getCount('countDone'))
+      }
+      else{
+        incrTask('countDone', getCount('countDone'))
+      }
       e.currentTarget.classList.toggle('rectangle_checked_true')
-      saveCount('countDone', getCount('countDone') + 1)
+
       $text.classList.toggle('task-item_text_line-through')
       $item_remove.classList.toggle('task-item_remove_view_true')
       task.classList.toggle('task-item_blue-border')
+      changeTextForCountDo(getCount('countDo') - getCount('countDone'))
+      setGaugePercent()
     })
   }
 }
 
-function incrTask(items) {
-  if (items != null) {
-    countDo = items.length + 1
+function addListenerForRemove(item) {
+
+  item.addEventListener('click', (e)=>{
+    let itemsForDelete = e.currentTarget.parentElement
+    let items = itemsForDelete.parentNode
+    items.removeChild(itemsForDelete)
+
+    if(itemsForDelete.querySelector('.task-item_remove.task-item_remove_view_true') != null)
+    {
+      decrTask('countDone', getCount('countDone'))
+      decrTask('countDo', getCount('countDo'))
+    }
+    else{
+      decrTask('countDo', getCount('countDo'))
+    }
+    changeTextForCountDo(getCount('countDo') - getCount('countDone'))
+    setGaugePercent()
+  })
+}
+
+function changeTextForCountDo(value) {
     const $gauge = document.querySelector('.gauge')
-    setGaugePercent($gauge, countDo)
     let count = document.querySelector('.todo-progress_todo-count')
     let text = document.querySelector('.todo-progress_todo-text')
-    text.innerText = (countDo > 1 ? "tasks to do" : "task to do")
-    count.innerText = countDo
-    saveCount('countDo', countDo)
+    text.innerText = (value > 1 ? "tasks to do" : "task to do")
+    count.innerText = value
+    setGaugePercent($gauge, value)
+}
+
+function decrTask(itemName, value) {
+  if (value >= 0) {
+    value -= 1
+    saveCount(itemName, value)
+  }
+}
+
+function incrTask(itemName, value) {
+  if (value >= 0) {
+    value += 1
+    saveCount(itemName, value)
   }
 }
 
@@ -61,6 +106,7 @@ function addNewTask(text, $newTaskHTML) {
     new_task.querySelector('.task-item__text').textContent = text
 
     addBoardAndCheckEffectOnClick(new_task)
+    addListenerForRemove(new_task.querySelector('.task-item_remove'))
 
     let task_list = document.querySelector(".task-list__tasks")
     let tasks = document.querySelectorAll(".task-item")
@@ -70,6 +116,7 @@ function addNewTask(text, $newTaskHTML) {
     else {
       task_list.appendChild(new_task)
     }
-    incrTask(tasks)
+    incrTask('countDo', getCount('countDo'))
+    changeTextForCountDo(getCount('countDo')- getCount('countDone'))
   }
 }
