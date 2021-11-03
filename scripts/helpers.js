@@ -22,26 +22,29 @@ function saveCount(item, count) {
 }
 
 function addBoardAndCheckEffectOnClick(task) {
-  const $rectagle = task.querySelector(".rectangle")
-  const $text = task.querySelector(".task-item__text")
-  const $item_remove = task.querySelector(".task-item_remove")
+  if (task != null) {
+    const $rectagle = task.querySelector(".rectangle")
+    const $text = task.querySelector(".task-item__text")
+    const $item_remove = task.querySelector(".task-item_remove")
 
-  $rectagle.addEventListener('click', (e) => {
-    e.currentTarget.classList.toggle('rectangle_checked_true')
-    saveCount('countDone', getCount('countDone') + 1)
-    $text.classList.toggle('task-item_text_line-through')
-    $item_remove.classList.toggle('task-item_remove_view_true')
-  })
+    $rectagle.addEventListener('click', (e) => {
+      e.currentTarget.classList.toggle('rectangle_checked_true')
+      saveCount('countDone', getCount('countDone') + 1)
+      $text.classList.toggle('task-item_text_line-through')
+      $item_remove.classList.toggle('task-item_remove_view_true')
+      task.classList.toggle('task-item_blue-border')
+    })
+  }
 }
 
 function incrTask(items) {
   if (items != null) {
-    countDo = items.length  + 1
+    countDo = items.length + 1
     const $gauge = document.querySelector('.gauge')
     setGaugePercent($gauge, countDo)
     let count = document.querySelector('.todo-progress_todo-count')
     let text = document.querySelector('.todo-progress_todo-text')
-    text.innerText  = (countDo > 1 ? "tasks to do" : "task to do")
+    text.innerText = (countDo > 1 ? "tasks to do" : "task to do")
     count.innerText = countDo
     saveCount('countDo', countDo)
   }
@@ -49,17 +52,13 @@ function incrTask(items) {
 
 
 function addNewTask(text, $newTaskHTML) {
-  if (text != "") {
+  if (text != "" || text == "") {
 
     let new_task = document.createElement('div')
     new_task.className = "task-item"
     new_task.innerHTML = $newTaskHTML
 
     new_task.querySelector('.task-item__text').textContent = text
-
-    new_task.addEventListener('click', (e) => {
-      e.target.classList.toggle('task-item_blue-border')
-    })
 
     addBoardAndCheckEffectOnClick(new_task)
 

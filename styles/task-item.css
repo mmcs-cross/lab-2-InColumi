@@ -8,9 +8,14 @@
   margin: 4px 0 4px;
 }
 
-.task-item.task-item_blue-border {
-  border: 3px solid #364ffb;
+.task-item:hover{
+  box-shadow: 0 0 0 3px #364ffb;
 }
+
+.task-item.task-item_blue-border {
+  box-shadow: 0 0 0 3px #364ffb;
+}
+
 
 .task-item:hover > .task-item_remove * {
   opacity: 1;
