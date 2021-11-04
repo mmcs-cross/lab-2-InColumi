@@ -2,6 +2,15 @@ localStorage.clear()
 
 const GAUGE_MAX = 329
 
+function isAllDone() {
+  const $countDo = getCount('countDo')
+  const $countDone = getCount('countDone')
+
+  if ($countDo == $countDone){
+    alert("All done!!!")
+  }
+}
+
 function getCount(item) {
   const stateAsStr = localStorage.getItem(item)
   return (stateAsStr ? JSON.parse(stateAsStr) : 0)
@@ -48,6 +57,7 @@ function addBoardAndCheckEffectOnClick(task) {
       task.classList.toggle('task-item_blue-border')
       changeTextForCountDo(getCount('countDo') - getCount('countDone'))
       setGaugePercent()
+      isAllDone()
     })
   }
 }
@@ -97,7 +107,7 @@ function incrTask(itemName, value) {
 
 
 function addNewTask(text, $newTaskHTML) {
-  if (text != "" || text == "") {
+  if (text != "") {
 
     let new_task = document.createElement('div')
     new_task.className = "task-item"
