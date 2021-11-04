@@ -1,6 +1,6 @@
-localStorage.clear();
-saveCount('countDo', 0)
-saveCount('countDone', 0)
+localStorage.clear()
+
+const GAUGE_MAX = 329
 
 function getCount(item) {
   const stateAsStr = localStorage.getItem(item)
@@ -14,14 +14,14 @@ function setGaugePercent() {
   const $gaugeCircle = $node.querySelector('.gauge__cirlce-arc')
   const $gaugePercent = $node.querySelector('.gauge__percent')
 
-  let value = 0
+  let percent = 0
   if ($countDo != 0){
-    value = ($countDone / $countDo) *  100
-    value = Math.trunc(value)
-  }  
-
-  $gaugeCircle.setAttribute('stroke-dasharray', `${$countDone} ${$countDo}`)
-  $gaugePercent.innerText = value + "%"
+    percent = ($countDone / $countDo) *  100
+    percent = Math.trunc(percent)
+ }  
+  const value = GAUGE_MAX * (percent / 100)
+  $gaugeCircle.setAttribute('stroke-dasharray', `${value} ${GAUGE_MAX}`)
+  $gaugePercent.innerText = percent + "%"
 }
 
 function saveCount(item, count) {

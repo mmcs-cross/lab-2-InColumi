@@ -62,7 +62,7 @@ body {
   display: block;
   user-select: none;
   position: relative;
-  margin: 5% 0 7%;
+  margin: 3% 0 3%;
 }
 
 .gauge__average {
@@ -123,8 +123,8 @@ body {
 }
 
 .task-list__input {
-  margin-top: auto;
-  width: 95%;
+  /* margin-top: auto; */
+  width: 100%;
   display: flex;
   align-items: center;
 }
